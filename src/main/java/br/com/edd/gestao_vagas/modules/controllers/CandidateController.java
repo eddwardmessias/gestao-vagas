@@ -1,6 +1,7 @@
-package br.com.edd.gestao_vagas.controllers;
+package br.com.edd.gestao_vagas.modules.controllers;
 
-import br.com.edd.gestao_vagas.candidate.CandidateEntity;
+import br.com.edd.gestao_vagas.modules.candidate.candidate.CandidateEntity;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,7 @@ public class CandidateController {
 
 
     @PostMapping("/")
-    public void create(@RequestBody CandidateEntity candidateEntity){
+    public void create(@Valid @RequestBody CandidateEntity candidateEntity){
         System.out.println("Candidado");
         System.out.println(candidateEntity.getEmail());
     }
